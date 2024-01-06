@@ -1,7 +1,7 @@
 client:
 
 - react
-- styled-component
+- tailwindcss
 - axios
 - react-redux
 - reduxjs/toolkit
