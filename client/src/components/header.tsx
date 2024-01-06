@@ -1,4 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import * as stylex from '@stylexjs/stylex';
+
+const HEADER_STYLES = stylex.create({
+  base: {
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: 'black',
+  },
+});
 
 const Header = () => {
   const items = [
@@ -7,7 +16,7 @@ const Header = () => {
   ];
 
   return (
-    <header>
+    <header {...stylex.props(HEADER_STYLES.base)}>
       <nav>
         <ul>
           {items.map((item) => (
