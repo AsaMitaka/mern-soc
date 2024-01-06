@@ -1,44 +1,28 @@
-import * as stylex from '@stylexjs/stylex';
-import { ComponentProps } from 'react';
+interface InputProps {
+  isBig?: boolean;
+  isOutline?: boolean;
+  isRounded?: boolean;
+  placeholder: string;
+  type?: string;
+}
 
-type InputProps = {
-  variant?: 'primary' | 'secondary';
-  isLarge?: boolean;
-} & ComponentProps<'input'>;
-
-const INPUT_STYLES = stylex.create({
-  base: {
-    fontSize: '22px',
-    border: '1px solid transparent',
-    padding: '5px 10px',
-    borderRadius: '15px',
-    width: 'auto',
-    maxWidth: '200px',
-  },
-  primary: {
-    backgroundColor: 'white',
-    color: 'black',
-  },
-  secondary: {
-    backgroundColor: 'black',
-    color: 'white',
-    border: '1px solid black',
-  },
-  isLarge: {
-    width: '100%',
-    maxWidth: 'none',
-    padding: '10px 20px',
-    borderRadius: '20px',
-    fontSize: '24px',
-  },
-});
-
-const Input = ({ variant = 'primary', isLarge = false, ...props }: InputProps) => {
+const Input = ({ isBig, isOutline, isRounded, placeholder, type = 'text' }: InputProps) => {
   return (
     <input
-      {...stylex.props(INPUT_STYLES.base, INPUT_STYLES[variant], isLarge && INPUT_STYLES.isLarge)}
-      type="text"
-      {...props}
+      className={`
+      ${isBig ? 'w-full text-xl px-4 py-2' : 'w-fit text-md px-2 py-1'}
+      ${
+        isOutline
+          ? 'border-black border-1 bg-white text-black focus:outline-purple-500'
+          : 'bg-black text-white'
+      }
+      ${isRounded ? 'rounded-md' : ''}
+      my-[5px] 
+      focus:opacity-65
+      hover:opacity-65
+      `}
+      placeholder={placeholder}
+      type={type}
     />
   );
 };
