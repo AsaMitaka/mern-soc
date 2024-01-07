@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
-import { IoMdHome } from 'react-icons/io';
-import { PiBookOpenTextBold } from 'react-icons/pi';
+import { IoMdHome, IoIosSearch } from 'react-icons/io';
 
 const Header = () => {
   const items = [
     { title: 'Main', href: '/', icon: IoMdHome },
-    { title: 'About', href: '/about', icon: PiBookOpenTextBold },
+    { title: 'Search', href: '/search', icon: IoIosSearch },
   ];
 
   return (
