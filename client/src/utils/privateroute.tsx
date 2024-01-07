@@ -11,7 +11,7 @@ const PrivateRoute = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="mt-5 mx-auto flex-1 w-full max-w-lg md:max-w-screen-xl">
+      <div className="mx-auto flex-1 w-full max-w-lg md:max-w-screen-xl">
         <Outlet />
       </div>
     </div>
