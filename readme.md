@@ -16,3 +16,8 @@ server:
 - dotenv
 - multer
 - mongoose
+
+CONST colors:
+purple-500;
+black;
+white;
