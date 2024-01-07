@@ -2,11 +2,23 @@ interface InputProps {
   isBig?: boolean;
   isOutline?: boolean;
   isRounded?: boolean;
+  onChange?: (value: any) => void;
+  onKeyDown?: (event: KeyboardEvent) => void;
   placeholder: string;
   type?: string;
+  value?: string;
 }
 
-const Input = ({ isBig, isOutline, isRounded, placeholder, type = 'text' }: InputProps) => {
+const Input = ({
+  isBig,
+  isOutline,
+  isRounded,
+  onChange,
+  onKeyDown,
+  placeholder,
+  type = 'text',
+  value,
+}: InputProps) => {
   return (
     <input
       className={`
@@ -21,8 +33,11 @@ const Input = ({ isBig, isOutline, isRounded, placeholder, type = 'text' }: Inpu
       focus:opacity-65
       hover:opacity-65
       `}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
       placeholder={placeholder}
       type={type}
+      value={value}
     />
   );
 };
