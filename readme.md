@@ -21,3 +21,5 @@ CONST colors:
 purple-500;
 black;
 white;
+
+//add likes to posts;
