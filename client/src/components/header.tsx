@@ -9,7 +9,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky w-full top-0 left-0 right-0 px-10 py-4 bg-black">
+    <header className="sticky w-full top-0 left-0 right-0 px-2 md:px-10 py-4 bg-black">
       <nav className="flex justify-between">
         <ul className="flex flex-row items-center">
           {items.map((item) => (
@@ -25,7 +25,7 @@ const Header = () => {
           <li
             className="text-2xl font-light hover:opacity-50
           ">
-            <Link to={'/profile'} className="text-white flex items-center">
+            <Link to={'/profile/1'} className="text-white flex items-center">
               <CgProfile color="white" size={28} className="flex md:hidden" />
               <span className="hidden md:flex">Profile</span>
             </Link>
