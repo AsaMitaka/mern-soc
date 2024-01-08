@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import Input from '../components/ui/input';
-import Trends from '../components/trends';
+import { Post } from '../components';
 
 const Search = () => {
   const navigate = useNavigate();
@@ -34,21 +34,20 @@ const Search = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="w-2/3">
-        <Input
-          isBig
-          isRounded
-          onKeyDown={handleKeyDown}
-          onChange={(e) => handleSearch(e)}
-          placeholder="Search"
-          value={search}
-        />
-      </div>
-      <div className="w-1/3">
-        <Trends />
-      </div>
-    </div>
+    <>
+      <Input
+        isBig
+        isRounded
+        onKeyDown={handleKeyDown}
+        onChange={(e) => handleSearch(e)}
+        placeholder="Search"
+        value={search}
+      />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+    </>
   );
 };
 
