@@ -29,7 +29,7 @@ const createPost = async (req, res) => {
     user.posts.push(post._id);
     await user.save();
 
-    return res.status(200).json({ post });
+    return res.status(200).json(post);
   } catch (err) {
     return res.status(500).json({ msg: 'Error creating post' });
   }
