@@ -12,7 +12,7 @@ const loginController = async (req, res) => {
 
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(403).json({ msg: 'User is not registered' });
+      return res.status(403).json({ msg: 'User does not exist' });
     }
 
     const isValidPassword = await bcrypt.compare(password, user.password);
@@ -20,8 +20,8 @@ const loginController = async (req, res) => {
       return res.status(403).json({ msg: 'Email or password is invalid' });
     }
 
-    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
     const { password: pass, ...otherData } = user._doc;
+    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
 
     return res.status(200).json({ token, ...otherData });
   } catch (err) {
