@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface UserProps {
   user: null | [];
-  token: null | string;
+  isAuth: boolean;
   posts: [];
 }
 
 const initialState: UserProps = {
   user: null,
-  token: null,
+  isAuth: false,
   posts: [],
 };
 
@@ -18,11 +18,13 @@ export const authSlice = createSlice({
   reducers: {
     setLogin: (state, action) => {
       state.user = action.payload.user;
-      state.token = action.payload.token;
+      state.isAuth = true;
+      localStorage.setItem('token', action.payload.token);
     },
     setLogout: (state) => {
       state.user = null;
-      state.token = null;
+      state.isAuth = false;
+      localStorage.removeItem('token');
     },
     setPosts: (state, action) => {
       state.posts = action.payload.posts;
