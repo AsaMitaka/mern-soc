@@ -3,7 +3,7 @@ import { RightBar } from '.';
 
 const HomeLayout = () => {
   return (
-    <div className="flex">
+    <div className="flex mt-2">
       <div className="md:w-2/3 mx-auto md:px-0 px-2">
         <Outlet />
       </div>
