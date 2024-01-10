@@ -1,8 +1,10 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { Header } from '../components';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
 const PrivateRoute = () => {
-  const isAuth = true;
+  const isAuth = useSelector<RootState>((state) => state.auth.isAuth);
 
   if (!isAuth) {
     return <Navigate to="/login" />;
