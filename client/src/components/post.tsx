@@ -4,18 +4,11 @@ import { AiOutlineRetweet } from 'react-icons/ai';
 import { FiMessageCircle } from 'react-icons/fi';
 import { IoHeartOutline, IoHeartSharp } from 'react-icons/io5';
 import pic from '../assets/login.jpg';
-
-interface PostProps {
-  user: {
-    name: string;
-    username: string;
-    imageUrl: string;
-  };
-  title: string;
-  text: string;
-}
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
 const Post = () => {
+  const isUser = useSelector<RootState>((state) => state.auth.user._id);
   const [isLiked, setLiked] = useState<boolean>(true);
   const Heart = isLiked ? IoHeartSharp : IoHeartOutline;
 
@@ -24,6 +17,10 @@ const Post = () => {
 
     setLiked((prev) => !prev);
     console.log('handleLike');
+  };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
   };
 
   return (
