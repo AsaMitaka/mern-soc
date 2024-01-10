@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const route = require('./routes/');
+const path = require('path');
 require('dotenv').config();
 
 const PORT = 3000;
@@ -11,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
+// app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
 app.use('/api', route);
 
 const start = async () => {
