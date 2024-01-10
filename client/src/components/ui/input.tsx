@@ -1,9 +1,11 @@
+import type { ChangeEvent, KeyboardEvent } from 'react';
+
 interface InputProps {
   isBig?: boolean;
   isOutline?: boolean;
   isRounded?: boolean;
-  onChange?: (value: any) => void;
-  onKeyDown?: (event: KeyboardEvent) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   placeholder: string;
   type?: string;
   value?: string;
