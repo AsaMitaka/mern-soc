@@ -6,7 +6,7 @@ enum AppRoute {
   ABOUT = '/about',
   SEARCH = '/search?',
   PROFILEPOSTS = '/profile/:id',
-  PROFILELIKES = '/profile/:id/likes',
+  // PROFILELIKES = '/profile/:id/likes',
   ERROR = '*',
 }
 
