@@ -27,7 +27,9 @@ const Post = () => {
   };
 
   return (
-    <Link className="flex flex-col px-5 py-3 border-b-[1px]" to="/post/1">
+    <Link
+      className="flex flex-col px-5 py-3 border-b-[1px] text-black dark:text-white"
+      to="/post/1">
       <Link to="/profile/2" className="flex flex-row items-center group">
         <img src={pic} alt="userpic" className="w-6 h-6 mr-2 group-hover:opacity-80" />
         <p className="text-lg font-semibold mr-2 group-hover:underline">Username</p>
@@ -41,7 +43,10 @@ const Post = () => {
       </div>
       <div className="mt-2 flex flex-row items-center">
         <div className="flex flex-row items-center group mr-5" onClick={handleLike}>
-          <AiOutlineRetweet color="black" className="mr-2 group-hover:opacity-70" size={24} />
+          <AiOutlineRetweet
+            className="mr-2 group-hover:opacity-70 text-black dark:text-white"
+            size={24}
+          />
           <span className="text-md mr-1">2</span>
         </div>
         <div className="flex flex-row items-center group mr-5" onClick={handleLike}>
@@ -49,7 +54,10 @@ const Post = () => {
           <span className="text-md mr-1">2</span>
         </div>
         <div className="flex flex-row items-center group mr-5" onClick={handleLike}>
-          <FiMessageCircle color="black" className="mr-2 group-hover:opacity-70" size={24} />
+          <FiMessageCircle
+            className="mr-2 text-black dark:text-white group-hover:opacity-70"
+            size={24}
+          />
           <span className="text-md mr-1">2</span>
         </div>
       </div>

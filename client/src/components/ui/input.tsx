@@ -26,7 +26,7 @@ const Input = ({
       ${
         isOutline
           ? 'border-black border-1 bg-white text-black focus:outline-purple-500'
-          : 'bg-black text-white'
+          : 'bg-black text-white dark:bg-white dark:text-black'
       }
       ${isRounded ? 'rounded-md' : ''}
       my-[5px] 

@@ -1,12 +1,12 @@
 import pic from '../assets/login.jpg';
 import { Link, Outlet } from 'react-router-dom';
 import Btn from './ui/button';
-import { RightBar, Trends } from '.';
+import { Trends } from '.';
 
 const ProfileLayout = () => {
   return (
     <div className="mt-3 flex mx-auto md:px-0 px-2 md:flex-row flex-col min-h-svh">
-      <div className="md:w-1/5 flex md:flex-col flex-row md:justify-start justify-between">
+      <div className="md:w-1/5 flex md:flex-col flex-row md:justify-start justify-between text-black dark:text-white">
         <div className="">
           <img src={pic} alt="user pic" className="w-36 h-36 border-white border-3" />
         </div>
