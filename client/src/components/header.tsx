@@ -15,6 +15,7 @@ const Header = () => {
   const dispatch = useDispatch<AppDispatch>();
   const isDark = useSelector<RootState>((state) => state.mode.mode);
   const ModeIcon = isDark ? CiLight : CiDark;
+  const userId = useSelector<RootState>((state) => state.auth.user._id);
 
   const handleDarkMode = () => {
     dispatch(setMode());
@@ -42,7 +43,9 @@ const Header = () => {
           <li
             className="text-2xl font-light hover:opacity-50
           ">
-            <Link to={'/profile/1'} className="text-white dark:text-black flex items-center">
+            <Link
+              to={`/profile/${userId}`}
+              className="text-white dark:text-black flex items-center">
               <CgProfile color="white" size={28} className="flex md:hidden" />
               <span className="hidden md:flex">Profile</span>
             </Link>
