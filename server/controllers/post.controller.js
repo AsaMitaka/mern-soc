@@ -95,6 +95,22 @@ const getPost = async (req, res) => {
   }
 };
 
+const getPosts = async (req, res) => {
+  try {
+    const posts = await Post.find();
+    // .populate('authorId');
+    // .populate({ path: 'comments', populate: { path: 'authorId', model: 'User' } });
+
+    if (!posts) {
+      return res.status(403).json({ msg: 'Post is not found' });
+    }
+
+    return res.status(500).json(posts);
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
+  }
+};
+
 const getUserPosts = async (req, res) => {
   const { userId } = req.params;
 
@@ -132,6 +148,7 @@ module.exports = {
   deletePost,
   editPost,
   getPost,
+  getPosts,
   getAllPosts,
   getUserPosts,
 };
