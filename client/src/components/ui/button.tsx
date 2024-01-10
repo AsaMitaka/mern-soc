@@ -1,11 +1,15 @@
-interface ButtonProps {
+import type { ButtonHTMLAttributes, MouseEvent } from 'react';
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isBig?: boolean;
   isPrimary?: boolean;
   isRounded?: boolean;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   title: string;
+  type?: 'button' | 'submit';
 }
 
-const Btn = ({ isBig, isPrimary, isRounded, title }: ButtonProps) => {
+const Btn = ({ isBig, isPrimary, isRounded, onClick, type = 'button', title }: ButtonProps) => {
   return (
     <button
       className={`
@@ -15,7 +19,9 @@ const Btn = ({ isBig, isPrimary, isRounded, title }: ButtonProps) => {
       ${isPrimary ? 'bg-black text-white border-black' : 'border-purple-500 text-black bg-white'}
       font-bold
       hover:opacity-60
-    `}>
+    `}
+      onClick={onClick}
+      type={type}>
       {title}
     </button>
   );
