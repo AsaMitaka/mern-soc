@@ -10,16 +10,22 @@ export interface UserProps {
 }
 
 export interface PostProps {
-  _id: number;
-  title: string;
+  id: string;
   text: string;
-  authorId: number;
+  authorId: UserProps;
+  data: string;
   comments: CommentProps[];
 }
 
 export interface CommentProps {
   _id: number;
   text: string;
-  authorId: number;
   postId: number;
+  authorId: UserProps;
+}
+
+export interface TextareaProps {
+  onChange: (e: any) => void;
+  placeholder: string;
+  value: string;
 }
