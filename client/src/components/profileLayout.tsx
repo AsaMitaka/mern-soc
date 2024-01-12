@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
-import { Trends } from '.';
+import { Btn, Trends } from '.';
 import axios from '../libs/axios';
-import Btn from './ui/button';
 import pic from '../assets/login.jpg';
+import { UserProps } from '../libs/types';
 
 const ProfileLayout = () => {
   const { id } = useParams();
-  const [data, setData] = useState();
+  const [data, setData] = useState<UserProps>();
 
   useEffect(() => {
     const getData = async () => {
