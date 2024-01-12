@@ -19,7 +19,7 @@ const Input = ({
   onKeyDown,
   placeholder,
   type = 'text',
-  value,
+  value = '',
 }: InputProps) => {
   return (
     <input
@@ -31,7 +31,7 @@ const Input = ({
           : 'bg-black text-white dark:bg-white dark:text-black'
       }
       ${isRounded ? 'rounded-md' : ''}
-      my-[5px] 
+      mb-[5px] 
       focus:opacity-65
       hover:opacity-65
       `}
