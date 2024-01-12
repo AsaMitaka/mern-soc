@@ -3,7 +3,7 @@ const { createComment, deleteComment } = require('../controllers/comment.control
 const verifyToken = require('../middleware/verifyToken');
 const route = express.Router();
 
-route.post('/comment/create', verifyToken, createComment);
-route.delete('/comment/:commentId', verifyToken, deleteComment);
+route.post('/comment/', verifyToken, createComment);
+route.delete('/comment/:id', verifyToken, deleteComment);
 
 module.exports = route;
