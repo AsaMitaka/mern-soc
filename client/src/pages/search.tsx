@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import Input from '../components/ui/input';
-import { Post } from '../components';
+import { PostComp } from '../components';
 
 const Search = () => {
   const navigate = useNavigate();
@@ -43,10 +43,7 @@ const Search = () => {
         placeholder="Search"
         value={search}
       />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {/* <PostComp /> */}
     </>
   );
 };

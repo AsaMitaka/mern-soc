@@ -1,6 +1,5 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Trends } from '.';
-import Input from './ui/input';
+import { Input, Trends } from '.';
 import { useCallback, useEffect, useState } from 'react';
 
 const RightBar = () => {
@@ -9,7 +8,6 @@ const RightBar = () => {
   const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
-    console.log(searchParams.get('q'));
     const searchData = searchParams.get('q');
 
     setSearch(searchData);
@@ -38,7 +36,6 @@ const RightBar = () => {
       <div className="px-4">
         <Input
           isBig
-          isRounded
           onKeyDown={handleKeyDown}
           onChange={(e) => handleSearch(e)}
           placeholder="Search"

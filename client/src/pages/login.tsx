@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Input from '../components/ui/input';
-import Btn from '../components/ui/button';
 import { useDispatch } from 'react-redux';
 import login from '../assets/login.jpg';
 import { checkValidEmail, checkValidPassword } from '../libs/validation';
 import axios from '../libs/axios';
 import { AppDispatch } from '../store/store';
 import { setLogin } from '../store/slices/auth';
+import { Btn, Input } from '../components';
 
 const Login = () => {
   const [email, setEmail] = useState('');

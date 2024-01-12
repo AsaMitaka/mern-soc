@@ -1,6 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import Input from '../components/ui/input';
-import Btn from '../components/ui/button';
 import register from '../assets/register.jpg';
 import { useEffect, useState } from 'react';
 import {
@@ -13,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../store/store';
 import { setLogin } from '../store/slices/auth';
 import axios from '../libs/axios';
+import { Btn, Input } from '../components';
 
 const Register = () => {
   const [username, setUsername] = useState('');

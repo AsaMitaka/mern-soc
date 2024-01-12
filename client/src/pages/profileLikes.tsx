@@ -1,16 +1,7 @@
-import Post from '../components/post';
+// import { PostComp } from '../components/';
 
 const ProfileLikes = () => {
-  return (
-    <>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-    </>
-  );
+  return <>{/* <PostComp /> */}</>;
 };
 
 export default ProfileLikes;
