@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface ModeProps {
+interface ModeStateProps {
   mode: boolean;
 }
 
 const storedMode =
   localStorage.getItem('mode') !== undefined ? JSON.parse(localStorage.getItem('mode')) : null;
 
-const initialState: ModeProps = {
+const initialState: ModeStateProps = {
   mode: storedMode !== null ? storedMode : true,
 };
 
