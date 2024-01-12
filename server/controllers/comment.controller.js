@@ -31,20 +31,15 @@ const createComment = async (req, res) => {
 };
 
 const deleteComment = async (req, res) => {
-  const id = req.params.commentId;
+  const { id } = req.params;
+  console.log(id);
 
   try {
-    const comment = await Comment.findOneAndRemove(id);
-
-    if (!comment) {
-      return res.status(403).json({ msg: 'Comment is not deleted' });
-    }
+    const comment = await Comment.findByIdAndDelete(id);
 
     const post = await Post.findById(comment.postId);
-    if (post) {
-      post.comments = post.comments.filter((commentId) => commentId.toString() !== id);
-      await post.save();
-    }
+    post.comments = post.comments.filter((commentId) => commentId.toString() !== id);
+    await post.save();
 
     return res.status(200).json({ msg: 'Comment is deleted successfully' });
   } catch (err) {
