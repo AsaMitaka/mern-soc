@@ -3,7 +3,6 @@ const route = express.Router();
 const {
   createPost,
   deletePost,
-  editPost,
   getPost,
   getPosts,
   getUserPosts,
@@ -12,9 +11,8 @@ const verifyToken = require('../middleware/verifyToken');
 
 route.post('/post', verifyToken, createPost);
 route.get('/post/all', getPosts);
-route.get('/post/:postId', getPost);
+route.get('/post/:id', getPost);
 route.get('/user/:userId/posts', getUserPosts);
-// route.patch('/post/:postId', verifyToken, editPost);
-route.delete('/post/:postId', verifyToken, deletePost);
+route.delete('/post/:id', verifyToken, deletePost);
 
 module.exports = route;
