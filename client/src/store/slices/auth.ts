@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { UserProps } from '../../libs/types';
 
-interface UserProps {
-  user: null | [];
+interface UserStateProps {
+  user: null | UserProps;
   isAuth: boolean;
   posts: [];
 }
 
-const initialState: UserProps = {
+const initialState: UserStateProps = {
   user: null,
   isAuth: false,
   posts: [],
