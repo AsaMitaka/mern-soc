@@ -4,6 +4,8 @@ const CommentSchema = new mongoose.Schema({
   text: {
     type: String,
     required: true,
+    minlength: 1,
+    maxlength: 255,
   },
   authorId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -17,7 +19,7 @@ const CommentSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    defaultValue: Date.now(),
+    defaultValue: Date.now,
   },
 });
 
